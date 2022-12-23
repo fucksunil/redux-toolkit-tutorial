@@ -3,13 +3,17 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import { configureStore } from '@reduxjs/toolkit';
-import { Provider } from "react-redux";
-import userReducers from './reducers/userReducers';
+import { Provider } from 'react-redux';
+import userReducers from './reducers/userReducer';
+
 
 
 const store = configureStore({
-  reducer: userReducers
+  reducer: userReducers,
+  // preloadedState: initialState
 })
+
+// console.log(store)
 
 
 

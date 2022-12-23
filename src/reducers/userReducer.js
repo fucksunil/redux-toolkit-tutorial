@@ -1,14 +1,10 @@
-
 import { createReducer } from "@reduxjs/toolkit"
 
 const initialState = {
-    name: "Ramesh",
-    age: 20,
+    name: "ramesh",
+    age: 28,
     status: "coder"
   }
-
-
-  //THIS IS OLD STYLE TO STATE DATA CHANGE
 
 //  export default (state=initialState, action)=>{
 //     if(action.type === "UPDATE_AGE"){
@@ -20,10 +16,17 @@ const initialState = {
 //     return state
 // }
 
-
-// THIS IS NEW STYLE TO STATE/ACTION DATA CHANGES
 export default createReducer(initialState, (builder)=>{
     builder.addCase('UPDATE_AGE', (state, action)=>{
         state.age = action.payload
     })
+
+    builder.addCase('UPDATE_NAME', (state, action)=>{
+        state.name = action.payload
+    })
+
+    builder.addCase('UPDATE_STATUS', (state, action)=>{
+        state.status = action.payload
+    })
+
 })
